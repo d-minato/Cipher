@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bg1{
+            background-image: url("bg.jpg");
+            color: azure;
+        }
+    </style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body id="bg1" >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a style="text-decoration: none; margin-left: 120px;" class="navbar-brand" href="#">CIPHER</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a style="text-decoration: none;" class="nav-link" href="/web-browser-based-file-encryption-decryption.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a style="text-decoration: none;" class="nav-link" href="/Explore.html">Explore</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <!-- <h6>
+                <button id="btnRefresh" onClick="javascript:location.reload();">Refresh Page</button>
+                <button id="btnDivEncrypt" onClick="javascript:switchdiv('encrypt');">Encrypt a File</button>
+                <button id="btnDivDecrypt" onClick="javascript:switchdiv('decrypt');">Decrypt a File</button>
+            </h6> -->
+          </form>
+        </div>
+      </nav>
+      <div class="container">
+        <h1> 
+            Usage
+        </h1>
+        <p>
+            Use this web page to encrypt a file using a password, then use the same password later to decrypt the file. IMPORTANT: The same password that was used to encrypt the file must be used to decrypt the file later. If you loose or forget the password, it cannot be recovered!
+    
+        </p>
+
+        <h1>
+            Operation and privacy
+        </h1>
+        <p>
+            This page uses javascript running within your web browser to encrypt and decrypt files client-side, in-browser. This page makes no network connections during this process, to ensure that your files and keys never leave the web browser during the process. This can be independently verified by reviewing the source code for this page, or by monitoring your web browser's networking activity during operation of this page. This page can also be downloaded and run locally on your system offline.
+
+        </p>
+        <h1>
+            Cryptography
+        </h1>
+        <p>
+            All client-side cryptography is implemented using the Web Crypto API. Files are encrypted using AES-CBC 256-bit symmetric encryption. The encryption key is derived from the password and a random salt using PBKDF2 derivation with 10000 iterations of SHA256 hashing.
+
+        </p>
+        <h1>
+            Compatibility with openssl
+        </h1>
+        <p>
+            The encryption used by this page is compatible with openssl.
+
+Files encrypted using this page can be decrypted using openssl using the following command:
+openssl aes-256-cbc -d -salt -pbkdf2 -iter 10000 -in encryptedfilename -out plaintextfilename
+
+Files encrypted using the following openssl command can be decrypted using this page:
+openssl aes-256-cbc -e -salt -pbkdf2 -iter 10000 -in plaintextfilename -out encryptedfilename
+        </p>
+      </div>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
